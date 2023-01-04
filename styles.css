@@ -1,0 +1,128 @@
+:root {
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --white: hsl(0, 0%, 99%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  background-color: var(--light-grayish-blue);
+  display: grid;
+  place-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1.5rem;
+}
+
+.card-preview-img {
+  object-fit: cover;
+  object-position: top;
+  height: 13.6rem;
+}
+
+.card-content {
+  background-color: var(--white);
+  padding: 2.4rem;
+}
+
+.card-title {
+  color: var(--dark-grayish-blue);
+  font-size: 1rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+.card-leading {
+  color: var(--desaturated-dark-blue);
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-author-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5em;
+}
+
+.card-author {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-author-name {
+  color: var(--dark-grayish-blue);
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.card-date {
+  color: var(--grayish-blue);
+  font-size: 0.65rem;
+}
+
+#share-btn {
+  background-color: var(--light-grayish-blue);
+  padding: 0.3rem;
+  border-radius: 5rem;
+}
