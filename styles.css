@@ -1,9 +1,14 @@
 :root {
-  --dark-grayish-blue: hsl(217, 19%, 35%);
+  /* --dark-grayish-blue: hsl(217, 19%, 35%);
   --desaturated-dark-blue: hsl(214, 17%, 51%);
   --grayish-blue: hsl(212, 23%, 69%);
   --light-grayish-blue: hsl(210, 46%, 95%);
-  --white: hsl(0, 0%, 99%);
+  --white: hsl(0, 0%, 99%); */
+  --dark-grayish-green: hsl(115, 15%, 32%);
+  --desaturated-dark-green: hsl(124, 11%, 49%);
+  --grayish-green: hsl(143, 57%, 77%);
+  --light-grayish-green: hsl(120, 37%, 88%);
+  --mint: hsl(120, 47%, 81%);
 }
 
 *,
@@ -24,11 +29,16 @@ body {
   text-rendering: optimizeSpeed;
   font-family: "Manrope", sans-serif;
   font-size: 0.8125rem;
-  background-color: var(--light-grayish-blue);
+  background-color: var(--light-grayish-green);
   display: grid;
   place-content: center;
   align-items: center;
   min-height: 100vh;
+
+  background-image: url(./images/wave.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover 100;
 }
 
 img,
@@ -67,28 +77,39 @@ select {
   display: flex;
   flex-direction: column;
   padding: 5rem 1.5rem;
+  max-width: 31.25rem;
 }
 
 .card-preview-img {
   object-fit: cover;
   object-position: top;
-  height: 13.6rem;
+  min-height: 13.6rem;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}
+
+.card-preview {
+  margin-bottom: -5px;
 }
 
 .card-content {
-  background-color: var(--white);
+  background-color: var(--mint);
   padding: 2.4rem;
+  max-width: 41.375rem;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  box-shadow: 0 5px 30px rgba(182, 182, 182, 0.75);
 }
 
 .card-title {
-  color: var(--dark-grayish-blue);
+  color: var(--dark-grayish-green);
   font-size: 1rem;
   font-weight: 700;
   padding-bottom: 1rem;
 }
 
 .card-leading {
-  color: var(--desaturated-dark-blue);
+  color: var(--desaturated-dark-green);
   font-weight: 500;
   padding-bottom: 2rem;
 }
@@ -111,18 +132,82 @@ select {
 }
 
 .card-author-name {
-  color: var(--dark-grayish-blue);
+  color: var(--dark-grayish-green);
   font-weight: 700;
   font-size: 0.7rem;
 }
 
 .card-date {
-  color: var(--grayish-blue);
+  color: var(--desaturated-dark-green);
   font-size: 0.65rem;
 }
 
 #share-btn {
-  background-color: var(--light-grayish-blue);
-  padding: 0.3rem;
+  background-color: var(--light-grayish-green);
+  width: 2rem;
+  height: 2rem;
   border-radius: 5rem;
+}
+
+#share-btn:hover {
+  box-shadow: 1px 3px 15px rgba(182, 182, 182, 0.75);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+@media (width>=1440px) {
+  body {
+    background-image: url(./images/wave.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover 100;
+  }
+  .card-container {
+    flex-direction: row;
+    max-width: 76rem;
+    height: 35.375rem;
+  }
+
+  .card-preview-img {
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.8rem;
+    box-shadow: 0 5px 30px rgba(182, 182, 182, 0.75);
+    display: block;
+    margin-left: 10%;
+    margin-right: auto;
+  }
+
+  .card-content {
+    border-top-right-radius: 0.8rem;
+    border-bottom-left-radius: 0;
+    position: relative;
+    left: -3rem;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .card-leading {
+    font-size: 1.25rem;
+  }
+
+  .card-author-name {
+    font-size: 1rem;
+  }
+
+  .card-date {
+    font-size: 1rem;
+  }
+
+  .card-author-avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #share-btn {
+    width: 3rem;
+    height: 3rem;
+  }
 }
