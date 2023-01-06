@@ -77,8 +77,9 @@ select {
   display: flex;
   flex-direction: column;
   padding: 5rem 1.5rem;
-  max-width: 31.25rem;
   position: relative;
+  max-width: 21.125rem;
+  /* max-width: 31.25rem; */
 }
 
 .card-preview-img {
@@ -149,11 +150,15 @@ select {
   height: 2rem;
   border-radius: 5rem;
 }
+.card-btn {
+  z-index: 9999;
+}
 
 .share-btn:hover {
   box-shadow: 1px 3px 15px rgba(182, 182, 182, 0.75);
   transition: all 0.3s ease;
   cursor: pointer;
+  background-color: var(--grayish-green);
 }
 .card-footer {
   position: relative;
@@ -161,28 +166,26 @@ select {
 
 .share-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1.15rem;
-  justify-content: space-between;
+  gap: 1rem;
   padding: 2.5rem;
+  z-index: 999;
 }
 
 .share-container {
   background-color: var(--dark-grayish-green);
-  /* width: 20.5rem; */
-  width: 90%;
+
+  width: 85%;
   height: 5rem;
   position: absolute;
-  top: 39rem;
-  /* left: 1rem; */
+  top: 35.9rem;
 
   border-bottom-right-radius: 0.8em;
   border-bottom-left-radius: 0.8em;
 }
 
 .share-list {
-  gap: 1.15rem;
+  gap: 0.875rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,23 +195,17 @@ select {
   color: var(--mint);
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.65rem;
   letter-spacing: 0.25rem;
-  /* padding-left: 2rem; */
-}
-
-.share-btn-pop {
-  background-color: var(--mint);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 5rem;
-  box-shadow: none;
-  padding-left: 2rem;
 }
 
 .hidden {
   display: none;
-  /* visibility: hidden; */
+}
+
+.share-container img {
+  width: 16px;
+  height: 16px;
 }
 
 @media (width>=1440px) {
@@ -268,14 +265,23 @@ select {
   }
 
   .share-container {
-    width: 100%;
-    width: 20rem;
+    width: 15rem;
     height: 4rem;
     top: 17rem;
-    left: 57rem;
+    left: 60rem;
     border-radius: 0.8em;
   }
-  #share-btn-pop {
-    display: none;
+
+  .share-container::after {
+    border-left: solid transparent 0.625rem;
+    border-right: solid transparent 0.625rem;
+    border-top: solid var(--dark-grayish-green) 1rem;
+    bottom: -0.875rem;
+    content: " ";
+    height: 0;
+    left: 7.75rem;
+    margin-left: -0.8125rem;
+    position: absolute;
+    width: 0;
   }
 }
