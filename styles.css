@@ -78,6 +78,7 @@ select {
   flex-direction: column;
   padding: 5rem 1.5rem;
   max-width: 31.25rem;
+  position: relative;
 }
 
 .card-preview-img {
@@ -154,6 +155,9 @@ select {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+.card-footer {
+  position: relative;
+}
 
 .share-container {
   display: flex;
@@ -167,10 +171,11 @@ select {
 .share-container {
   background-color: var(--dark-grayish-green);
   /* width: 20.5rem; */
-  width: 100%;
+  width: 90%;
   height: 5rem;
-  position: relative;
-  top: -5rem;
+  position: absolute;
+  top: 39rem;
+  /* left: 1rem; */
 
   border-bottom-right-radius: 0.8em;
   border-bottom-left-radius: 0.8em;
@@ -203,6 +208,7 @@ select {
 
 .hidden {
   display: none;
+  /* visibility: hidden; */
 }
 
 @media (width>=1440px) {
@@ -265,9 +271,11 @@ select {
     width: 100%;
     width: 20rem;
     height: 4rem;
-    position: relative;
-    top: -19rem;
+    top: 17rem;
     left: 57rem;
     border-radius: 0.8em;
+  }
+  #share-btn-pop {
+    display: none;
   }
 }
